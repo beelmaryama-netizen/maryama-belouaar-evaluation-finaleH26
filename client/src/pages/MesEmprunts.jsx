@@ -18,7 +18,7 @@ function MesEmprunts() {
         setLoading(true);
 
         axios
-        .get("http://localhost:5000/api/livres/emprunts", {
+        .get("https://maryama-belouaar-evaluation-finaleh26.onrender.com/api/livres/emprunts", {
             params: { email }
         })
         .then(res => {
@@ -37,7 +37,6 @@ function MesEmprunts() {
         <div>
             <h1>Mes emprunts</h1>
 
-            {/* FORMULAIRE */}
             <input
                 type="email"
                 placeholder="Entrer votre email"
@@ -49,12 +48,10 @@ function MesEmprunts() {
                 Voir mes emprunts
             </button>
 
-            {/* LOADING */}
             {loading && <p>Chargement...</p>}
 
             <hr />
 
-            {/* AFFICHAGE */}
             {rechercheEffectuee && emprunts.length === 0 && (
                 <p>Aucun emprunt trouvé</p>
             )}

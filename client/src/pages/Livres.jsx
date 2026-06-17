@@ -5,9 +5,14 @@ function Livres() {
   const [livres, setLivres] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/livres").then((res) => {
-      setLivres(res.data);
-    });
+    axios
+      .get("https://maryama-belouaar-evaluation-finaleh26.onrender.com/api/livres")
+      .then((res) => {
+        setLivres(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   return (
