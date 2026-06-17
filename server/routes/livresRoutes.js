@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 const {
-    getLivres,
-    getLivresEmpruntesByEmail
+  getLivres,
+  getLivresEmpruntesByEmail,
 } = require("../controllers/livresController");
 
 /**
@@ -17,15 +17,13 @@ const {
  *       200:
  *         description: Liste des livres récupérée avec succès
  */
-
-// 📚 livres disponibles
 router.get("/", getLivres);
 
 /**
  * @swagger
  * /api/livres/emprunts:
  *   get:
- *     summary: Récupérer les livres empruntés par un utilisateur
+ *     summary: Récupérer les emprunts d'un utilisateur
  *     tags:
  *       - Emprunts
  *     parameters:
@@ -39,8 +37,5 @@ router.get("/", getLivres);
  *       200:
  *         description: Liste des emprunts récupérée avec succès
  */
-
-// 👤 emprunts par email
 router.get("/emprunts", getLivresEmpruntesByEmail);
-
 module.exports = router;
